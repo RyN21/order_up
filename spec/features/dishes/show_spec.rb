@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Dish's Show Page" do
   before :each do
     @chef = Chef.create!(name: "Frank")
-    @pizza = chef.dishes.create!(name: "Pizza", description: "Thick crust and extra cheesy")
+    @pizza = @chef.dishes.create!(name: "Pizza", description: "Thick crust and extra cheesy")
     @bread = Ingredient.create!(name: "Bread", calories: 200)
     @cheese = Ingredient.create!(name: "Cheese", calories: 400)
     @sause = Ingredient.create!(name: "Marinara Sauase", calories: 150)
@@ -26,6 +26,7 @@ RSpec.describe "Dish's Show Page" do
   it "shows the total calorie count for that dish" do
       visit "/dishes/#{@pizza.id}"
 
+      expect(@pizza.calorie_count).to eq(750)
       expect(page).to have_content("Total calorie count: 750")
   end
 end
