@@ -1,3 +1,10 @@
 <h1><%= @chef.name %></h1>
 
 <%= link_to "See chef's ingredients list", "/chefs/#{@chef.id}/ingredients"%>
+
+<p>Most used ingredients:</p>
+<ol>
+  <% @chef.most_used_ingredients do |ingredient| %>
+  <li><%= ingredient.name %></li>
+  <% end %>
+</ol>

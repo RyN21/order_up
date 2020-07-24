@@ -9,4 +9,8 @@ class Chef <ApplicationRecord
     end
     ingredients.flatten.uniq
   end
+
+  def most_used_ingredients
+    # require "pry"; binding.pry
+  end
 end

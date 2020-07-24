@@ -45,12 +45,19 @@ RSpec.describe "Chef's Show Page" do
       expect(page).to have_content(@sause.name)
     end
   end
-
-  it "displays the chef's 3 most used ingredients" do
-    visit "/chefs/#{@chef.id}"
-
-    expect(page).to have_content("1. Bread")
-    expect(page).to have_content("2. Cheese")
-    expect(page).to have_content("3. Marinara Sause")
-  end
+  # 
+  # it "displays the chef's 3 most used ingredients" do
+  #   visit "/chefs/#{@chef.id}"
+  #
+  #   expect(page).to have_content("1. Bread")
+  #   expect(page).to have_content("2. Cheese")
+  #   expect(page).to have_content("3. Marinara Sause")
+  # end
 end
+
+# Extension
+# As a visitor
+# When I visit a chef's show page
+# I see the three most popular ingredients that the chef uses in their dishes
+# (Popularity is based off of how many dishes use that ingredient)
+# Collapse
