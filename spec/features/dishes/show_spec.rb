@@ -8,11 +8,11 @@ RSpec.describe "Dish's Show Page" do
     cheese = Ingredient.create!(name: "Cheese", calories: 400)
     sause = Ingredient.create!(name: "Marinara Sauase", calories: 150)
 
-    DishIngredients.create!(dish: pizza, ingredient: bread)
-    DishIngredients.create!(dish: pizza, ingredient: cheese)
-    DishIngredients.create!(dish: pizza, ingredient: sause)
+    DishIngredient.create!(dish: pizza, ingredient: bread)
+    DishIngredient.create!(dish: pizza, ingredient: cheese)
+    DishIngredient.create!(dish: pizza, ingredient: sause)
 
-    visit "/dishes/#{dish.id}"
+    visit "/dishes/#{pizza.id}"
 
     expect(page).to have_content(bread.name)
     expect(page).to have_content(cheese.name)
