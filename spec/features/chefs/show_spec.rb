@@ -33,9 +33,9 @@ RSpec.describe "Chef's Show Page" do
       click_on "See chef's ingredients list"
 
       expect(current_path).to eq("/chefs/#{@chef.id}/ingredients")
-      expect(page).to have_content(cheese.name)
-      expect(page).to have_content(bread.name)
-      expect(page).to have_content(sauce.name)
+      expect(page).to have_content(@cheese.name)
+      expect(page).to have_content(@bread.name)
+      expect(page).to have_content(@sauce.name)
     end
   end
 end
